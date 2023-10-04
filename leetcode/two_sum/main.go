@@ -1,3 +1,5 @@
+package two_sum
+
 func twoSum(nums []int, target int) []int {
 	m := make(map[int]int)
 
@@ -11,17 +13,16 @@ func twoSum(nums []int, target int) []int {
 	return nil
 }
 
-// brute force solution
-//func twoSum(nums []int, target int) []int {
-//	r := []int{}
-//	for i1, n1 := range nums {
-//		for i2, n2 := range nums {
-//			if i1 != i2 {
-//				if n1 + n2 == target {
-//					return append(r, i1, i2)
-//				}
-//			}
-//		}
-//	}
-//	return r
-//}
+func twoSumBruteForce(nums []int, target int) []int {
+	var r []int
+	for i1, n1 := range nums {
+		for i2, n2 := range nums {
+			if i1 != i2 {
+				if n1+n2 == target {
+					return append(r, i1, i2)
+				}
+			}
+		}
+	}
+	return r
+}
