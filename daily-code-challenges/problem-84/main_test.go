@@ -35,3 +35,17 @@ func Test1_84(t *testing.T) {
 		t.Errorf("got %d, wanted %d", got, want)
 	}
 }
+
+func BenchmarkFindIslands(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		m := [6][5]int{
+			{1, 0, 0, 0, 0}, /*  initializers for row indexed by 0 */
+			{0, 0, 1, 1, 0}, /*  initializers for row indexed by 1 */
+			{0, 1, 1, 0, 0},
+			{0, 0, 0, 0, 0},
+			{1, 1, 0, 0, 1},
+			{1, 1, 0, 0, 1}, /*  initializers for row indexed by 2 */
+		}
+		FindIslands(m)
+	}
+}

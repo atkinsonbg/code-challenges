@@ -26,3 +26,9 @@ func Test2_85(t *testing.T) {
 		t.Errorf("got %q, wanted %q", got, want)
 	}
 }
+
+func BenchmarkFindB(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		FindB(4, 6, 1)
+	}
+}
