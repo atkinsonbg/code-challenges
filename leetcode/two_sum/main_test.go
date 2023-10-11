@@ -84,3 +84,17 @@ func Test2_two_sum_fail(t *testing.T) {
 		t.Errorf("got %v, wanted %v", got, want)
 	}
 }
+
+func BenchmarkTwoSum(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		twoSum([]int{3, 3}, 6)
+	}
+	b.ReportAllocs()
+}
+
+func BenchmarkTwoSumBruteForce(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		twoSumBruteForce([]int{3, 3}, 6)
+	}
+	b.ReportAllocs()
+}
