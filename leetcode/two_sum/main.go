@@ -5,7 +5,7 @@ func twoSum(nums []int, target int) []int {
 
 	for i := 0; i < len(nums); i++ {
 		c := target - nums[i]
-		if _, ok := m[c]; ok {
+		if _, seen := m[c]; seen {
 			return []int{m[c], i}
 		}
 		m[nums[i]] = i

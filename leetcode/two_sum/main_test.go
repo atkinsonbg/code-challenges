@@ -85,38 +85,38 @@ func Test2_two_sum_fail(t *testing.T) {
 	}
 }
 
-func BenchmarkTwoSum(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		twoSum([]int{3, 3}, 6)
-	}
-	b.ReportAllocs()
-}
+//func BenchmarkTwoSum(b *testing.B) {
+//	for i := 0; i < b.N; i++ {
+//		twoSum([]int{3, 3}, 6)
+//	}
+//	b.ReportAllocs()
+//}
 
 func BenchmarkTwoSumLargeArray(b *testing.B) {
 	var a []int
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 100000000; i++ {
 		a = append(a, i)
 	}
 	for i := 0; i < b.N; i++ {
-		twoSum(a, 99000)
+		twoSum(a, 100000001)
 	}
 	b.ReportAllocs()
 }
 
-func BenchmarkTwoSumBruteForce(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		twoSumBruteForce([]int{3, 3}, 6)
-	}
-	b.ReportAllocs()
-}
+//func BenchmarkTwoSumBruteForce(b *testing.B) {
+//	for i := 0; i < b.N; i++ {
+//		twoSumBruteForce([]int{3, 3}, 6)
+//	}
+//	b.ReportAllocs()
+//}
 
 func BenchmarkTwoSumBruteForceLargeArray(b *testing.B) {
 	var a []int
-	for i := 0; i < 1000000; i++ {
+	for i := 0; i < 100000000; i++ {
 		a = append(a, i)
 	}
 	for i := 0; i < b.N; i++ {
-		twoSumBruteForce(a, 99000)
+		twoSumBruteForce(a, 100000001)
 	}
 	b.ReportAllocs()
 }
