@@ -92,9 +92,31 @@ func BenchmarkTwoSum(b *testing.B) {
 	b.ReportAllocs()
 }
 
+func BenchmarkTwoSumLargeArray(b *testing.B) {
+	var a []int
+	for i := 0; i < 1000000; i++ {
+		a = append(a, i)
+	}
+	for i := 0; i < b.N; i++ {
+		twoSum(a, 99000)
+	}
+	b.ReportAllocs()
+}
+
 func BenchmarkTwoSumBruteForce(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		twoSumBruteForce([]int{3, 3}, 6)
+	}
+	b.ReportAllocs()
+}
+
+func BenchmarkTwoSumBruteForceLargeArray(b *testing.B) {
+	var a []int
+	for i := 0; i < 1000000; i++ {
+		a = append(a, i)
+	}
+	for i := 0; i < b.N; i++ {
+		twoSumBruteForce(a, 99000)
 	}
 	b.ReportAllocs()
 }
