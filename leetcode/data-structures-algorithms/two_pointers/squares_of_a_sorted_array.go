@@ -1,4 +1,4 @@
-package data_structures_algorithms
+package two_pointers
 
 //Example 1:
 //
